@@ -111,13 +111,6 @@ abstract class Shape {
         this.radius = radius;
     }
 
-    // distance between two 2D vertices
-    public double getDistBetween2Dvertices(double x1, double y1, double x2, double y2) {
-        double diffX = Math.pow((x1 - x2), 2);
-        double diffY = Math.pow((y1 - y2), 2);
-        return Math.sqrt(diffX + diffY);
-    }
-
 }
 
 abstract class PlaneShape extends Shape implements PerimeterMeasurable, AreaMeasurable {
@@ -128,6 +121,7 @@ abstract class PlaneShape extends Shape implements PerimeterMeasurable, AreaMeas
         setWidth(width);
         setHeight(height);
     }
+
 
     public PlaneShape(double x1, double y1, double x2, double y2, double x3, double y3) {
         setX1(x1);
@@ -142,6 +136,13 @@ abstract class PlaneShape extends Shape implements PerimeterMeasurable, AreaMeas
         setX1(x1);
         setY1(y1);
         setRadius(radius);
+    }
+
+    // distance between two 2D vertices
+    public double getDistBetween2Dvertices(double x1, double y1, double x2, double y2) {
+        double diffX = Math.pow((x1 - x2), 2);
+        double diffY = Math.pow((y1 - y2), 2);
+        return Math.sqrt(diffX + diffY);
     }
 }
 
