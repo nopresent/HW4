@@ -39,30 +39,6 @@ abstract class Shape {
     private double height;
     private double radius;
 
-    public Shape(double x1, double y1, double radius) {
-        this.x1 = x1;
-        this.y1 = y1;
-        this.radius = radius;
-    }
-
-    // Одна вершина, ширина и высота
-    public Shape(double x1, double y1, double width, double height) {
-        this.x1 = x1;
-        this.y1 = y1;
-        this.width = width;
-        this.height = height;
-    }
-
-    // Три вершины
-    public Shape(double x1, double y1, double x2, double y2, double x3, double y3) {
-        this.x1 = x1;
-        this.y1 = y1;
-        this.x2 = x2;
-        this.y2 = y2;
-        this.x3 = x3;
-        this.y3 = y3;
-    }
-
     public double getWidth() {
         return width;
     }
@@ -99,6 +75,42 @@ abstract class Shape {
         return y3;
     }
 
+    public void setX1(double x1) {
+        this.x1 = x1;
+    }
+
+    public void setY1(double y1) {
+        this.y1 = y1;
+    }
+
+    public void setX2(double x2) {
+        this.x2 = x2;
+    }
+
+    public void setY2(double y2) {
+        this.y2 = y2;
+    }
+
+    public void setX3(double x3) {
+        this.x3 = x3;
+    }
+
+    public void setY3(double y3) {
+        this.y3 = y3;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
     // distance between two 2D vertices
     public double getDistBetween2Dvertices(double x1, double y1, double x2, double y2) {
         double diffX = Math.pow((x1 - x2), 2);
@@ -111,15 +123,25 @@ abstract class Shape {
 abstract class PlaneShape extends Shape implements PerimeterMeasurable, AreaMeasurable {
 
     public PlaneShape(double x1, double y1, double width, double height) {
-        super(x1, y1, width, height);
+        setX1(x1);
+        setY1(y1);
+        setWidth(width);
+        setHeight(height);
     }
 
     public PlaneShape(double x1, double y1, double x2, double y2, double x3, double y3) {
-        super(x1, y1, x2, y2, x3, y3);
+        setX1(x1);
+        setY1(y1);
+        setX2(x2);
+        setY2(y2);
+        setX3(x3);
+        setY3(y3);
     }
 
     public PlaneShape(double x1, double y1, double radius) {
-        super(x1, y1, radius);
+        setX1(x1);
+        setY1(y1);
+        setRadius(radius);
     }
 }
 
