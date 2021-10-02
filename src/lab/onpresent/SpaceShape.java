@@ -9,6 +9,7 @@ class SquarePyramid extends SpaceShape {
     public SquarePyramid(double x1, double y1, double z1, double width, double height) {
         setX1(x1);
         setY1(y1);
+        setZ1(z1);
         setWidth(width);
         setHeight(height);
     }
@@ -27,7 +28,6 @@ class SquarePyramid extends SpaceShape {
            Катет 2 - height
          */
         double hypotenuse = Math.sqrt(Math.pow(diagonal / 2, 2) + Math.pow(getHeight(), 2));
-        System.out.println(hypotenuse);
         return Math.pow(getWidth(), 2) + 2 * getWidth() * Math.sqrt(Math.pow(hypotenuse, 2) - (Math.pow(getWidth(), 2) / 4));
     }
 
@@ -35,6 +35,19 @@ class SquarePyramid extends SpaceShape {
     public double getVolume() {
         // https://goo.su/7zQO
         return (getHeight() * Math.pow(getWidth(), 2)) / 3;
+    }
+
+    @Override
+    public String toString() {
+        return getClass() + " {" +
+                "x1:" + getX1() +
+                ", y1:" + getY1() +
+                ", z1:" + getZ1() +
+                ", width:" + getWidth() +
+                ", height:" + getHeight() +
+                ", Volume:" + getVolume() +
+                ", Area:" + getArea() +
+                "}";
     }
 }
 
@@ -59,6 +72,21 @@ class Cuboid extends SpaceShape {
     public double getVolume() {
         return getWidth() * getHeight() * getDepth();
     }
+
+    @Override
+    public String toString() {
+        return getClass() + " {" +
+                "x1:" + getX1() +
+                ", y1:" + getY1() +
+                ", z1:" + getZ1() +
+                ", width:" + getWidth() +
+                ", height:" + getHeight() +
+                ", depth:" + getDepth() +
+                ", Volume:" + getVolume() +
+                ", Area:" + getArea() +
+                "}";
+    }
+
 }
 
 class Sphere extends SpaceShape {
@@ -78,5 +106,15 @@ class Sphere extends SpaceShape {
     @Override
     public double getVolume() {
         return (4 * Math.PI * Math.pow(getRadius(), 3)) / 3;
+    }
+
+    @Override
+    public String toString() {
+        return getClass() + " {" +
+                "x1:" + getX1() +
+                ", y1:" + getY1() +
+                ", z1:" + getZ1() +
+                ", radius:" + getRadius() +
+                "}";
     }
 }

@@ -1,5 +1,6 @@
 package lab.onpresent;
 
+
 abstract class PlaneShape extends Shape implements Interface.PerimeterMeasurable, Interface.AreaMeasurable {
 
 }
@@ -34,6 +35,20 @@ class Triangle extends PlaneShape {
         double answer = ((getX2() - getX1()) * (getY3() - getY1()) - (getX3() - getX1()) * (getY2() - getY1())) / 2;
         return answer < 0 ? answer * (-1) : answer;
     }
+
+    @Override
+    public String toString() {
+        return getClass() + " {" +
+                "x1:" + getX1() +
+                ", y1:" + getY1() +
+                ", x2:" + getX2() +
+                ", y2:" + getY2() +
+                ", x3:" + getX3() +
+                ", y3:" + getY3() +
+                ", Perimeter:" + getPerimeter() +
+                ", Area:" + getArea() +
+                "}";
+    }
 }
 
 
@@ -56,6 +71,17 @@ class Rectangle extends PlaneShape {
         return getWidth() * getHeight();
     }
 
+    @Override
+    public String toString() {
+        return getClass() + " {" +
+                "x1:" + getX1() +
+                ", y1:" + getY1() +
+                ", width:" + getWidth() +
+                ", height:" + getHeight() +
+                ", Perimeter:" + getPerimeter() +
+                ", Area:" + getArea() +
+                "}";
+    }
 }
 
 class Circle extends PlaneShape {
@@ -74,5 +100,16 @@ class Circle extends PlaneShape {
     @Override
     public double getArea() {
         return Math.PI * Math.pow(getRadius(), 2);
+    }
+
+    @Override
+    public String toString() {
+        return getClass() + " {" +
+                "x1:" + getX1() +
+                ", y1:" + getY1() +
+                ", radius:" + getRadius() +
+                ", Perimeter:" + getPerimeter() +
+                ", Area:" + getArea() +
+                "}";
     }
 }
