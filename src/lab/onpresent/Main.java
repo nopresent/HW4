@@ -23,9 +23,22 @@ public class Main {
         System.out.println("Area: " + circle.getArea());
         System.out.println("---------------------------------------------");
 
-        SquarePyramid squarePyramid = new SquarePyramid(5,5,4,5);
+        SquarePyramid squarePyramid = new SquarePyramid(5, 5, 5, 4, 5);
         System.out.println("SquarePyramid");
         System.out.println("Area: " + squarePyramid.getArea());
+        System.out.println("Volume: " + squarePyramid.getVolume());
+        System.out.println("---------------------------------------------");
+
+        Cuboid cuboid = new Cuboid(5, 5, 5, 4, 5, 5);
+        System.out.println("Cuboid");
+        System.out.println("Area: " + cuboid.getArea());
+        System.out.println("Volume: " + cuboid.getVolume());
+        System.out.println("---------------------------------------------");
+
+        Sphere sphere = new Sphere(5, 5, 6, 7);
+        System.out.println("Cuboid");
+        System.out.println("Area: " + sphere.getArea());
+        System.out.println("Volume: " + sphere.getVolume());
         System.out.println("---------------------------------------------");
 
     }
