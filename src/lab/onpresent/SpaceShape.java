@@ -115,6 +115,8 @@ class Sphere extends SpaceShape {
                 ", y1:" + getY1() +
                 ", z1:" + getZ1() +
                 ", radius:" + getRadius() +
+                ", Volume:" + getVolume() +
+                ", Area:" + getArea() +
                 "}";
     }
 }
