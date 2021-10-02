@@ -2,14 +2,11 @@ package lab.onpresent;
 
 abstract class PlaneShape extends Shape implements Interface.PerimeterMeasurable, Interface.AreaMeasurable {
 
-    public PlaneShape(double x1, double y1, double width, double height) {
-        setX1(x1);
-        setY1(y1);
-        setWidth(width);
-        setHeight(height);
-    }
+}
 
-    public PlaneShape(double x1, double y1, double x2, double y2, double x3, double y3) {
+class Triangle extends PlaneShape {
+
+    public Triangle(double x1, double y1, double x2, double y2, double x3, double y3) {
         setX1(x1);
         setY1(y1);
         setX2(x2);
@@ -18,24 +15,10 @@ abstract class PlaneShape extends Shape implements Interface.PerimeterMeasurable
         setY3(y3);
     }
 
-    public PlaneShape(double x1, double y1, double radius) {
-        setX1(x1);
-        setY1(y1);
-        setRadius(radius);
-    }
-
-    // distance between two 2D vertices
     public double getDistBetween2Dvertices(double x1, double y1, double x2, double y2) {
         double diffX = Math.pow((x1 - x2), 2);
         double diffY = Math.pow((y1 - y2), 2);
         return Math.sqrt(diffX + diffY);
-    }
-}
-
-class Triangle extends PlaneShape {
-
-    public Triangle(double x1, double y1, double x2, double y2, double x3, double y3) {
-        super(x1, y1, x2, y2, x3, y3);
     }
 
     @Override
@@ -57,7 +40,10 @@ class Triangle extends PlaneShape {
 class Rectangle extends PlaneShape {
 
     public Rectangle(double x1, double y1, double width, double height) {
-        super(x1, y1, width, height);
+        setX1(x1);
+        setY1(y1);
+        setWidth(width);
+        setHeight(height);
     }
 
     @Override
@@ -75,7 +61,9 @@ class Rectangle extends PlaneShape {
 class Circle extends PlaneShape {
 
     public Circle(double x1, double y1, double radius) {
-        super(x1, y1, radius);
+        setX1(x1);
+        setY1(y1);
+        setRadius(radius);
     }
 
     @Override

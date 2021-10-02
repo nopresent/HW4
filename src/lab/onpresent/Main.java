@@ -22,6 +22,12 @@ public class Main {
         System.out.println("Perimeter: " + circle.getPerimeter());
         System.out.println("Area: " + circle.getArea());
         System.out.println("---------------------------------------------");
+
+        SquarePyramid squarePyramid = new SquarePyramid(5,5,4,5);
+        System.out.println("SquarePyramid");
+        System.out.println("Area: " + squarePyramid.getArea());
+        System.out.println("---------------------------------------------");
+
     }
 
 }
